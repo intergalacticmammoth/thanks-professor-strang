@@ -28,7 +28,7 @@
 <style>
     div {
         padding: 1rem;
-        background-color: brown;
+        background-color: rgba(10, 10, 10, 0.25);
         border-radius: 0.5rem;
     }
 </style>

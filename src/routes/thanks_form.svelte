@@ -43,12 +43,12 @@
         display: none;
         text-align: left;
         flex-direction: column;
-        margin: 0 auto;
-        max-width: 600px;
+        /* margin: 0 auto; */
+        /* max-width: 600px; */
     }
 
     /* Form Children */
-    form > * {
+    /* form > * {
         margin: 0.25rem 0;
-    }
+    } */
 </style>

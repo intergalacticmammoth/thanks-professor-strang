@@ -9,6 +9,10 @@
     console.log(data);
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</svelte:head>
+
 <div class='container'>
     <h1 id='main-text'>Thanks Professor Strang, you have made <br>{numPeople}<br> {numPeople === 1 ? 'person' : 'persons'} love linear algebra.</h1>
 
@@ -35,9 +39,8 @@
 </div>
 
 <style>
+    /* This overrides picoss container...! */
     .container {
-        margin: 0 auto;
-        max-width: 1200px;
         text-align: center;
     }
     .error {
