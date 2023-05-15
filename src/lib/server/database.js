@@ -1,7 +1,26 @@
-// Fake db until I get this to work with a real database
-const db = new Map();
+import Database from 'better-sqlite3';
+import { DB_PATH } from '$env/static/private';
+import { UserMessage } from '$lib/types';
 
-export function createMessage(name, email, password, oneLiner, message) {
+const db = new Database(DB_PATH, { verbose: console.log });
+
+// Self-executed function to initialize the database
+(() => {
+	console.log('Initializing database...');
+	// Create users table if it doesn't exist
+	// Note: ROWID is built-in for every table in sqlite
+	db.exec(`
+		CREATE TABLE IF NOT EXISTS users (
+			name TEXT NOT NULL,
+			email TEXT NOT NULL,
+			password TEXT NOT NULL,
+			bio TEXT NOT NULL,
+			message TEXT NOT NULL
+		);
+	`);
+})();
+
+export function createMessage(name, email, password, bio, message) {
 	if (name === undefined) {
 		throw new Error('Name is required');
 	}
@@ -11,53 +30,49 @@ export function createMessage(name, email, password, oneLiner, message) {
 	if (password === undefined) {
 		throw new Error('Password is required');
 	}
-	if (oneLiner.length > 100) {
-		throw new Error('One liner must be less than 100 characters');
+	if (bio.length > 100) {
+		throw new Error('Bio must be less than 100 characters');
 	}
 	if (message.length > 300) {
 		throw new Error('Message must be less than 300 characters');
 	}
 
-	const messages = db.get('messages');
-	// TODO: notify front end??????
-	for (const message of messages) {
-		if (message.email === email) {
-			let error = `User ${email} already submitted a message`;
-			console.log(error);
-			throw new Error(error);
-		}
-	}
-
-	console.log('Creating message...');
-	const uid = crypto.randomUUID();
-	messages.push({
-		id: uid,
-		name: name,
-		password: password,
-		email: email,
-		oneLiner: oneLiner,
-		message: message
-	});
-
-	return uid;
+	const stmt = db.prepare(`
+		INSERT INTO users (name, email, password, bio, message)
+		VALUES (?, ?, ?, ?, ?);
+	`);
+	const info = stmt.run(name, email, password, bio, message);
+	return info.lastInsertRowid;
 }
 
 export function deleteMessage(email, password) {
-	const messages = db.get('messages');
-	const index = messages.findIndex((message) => message.email === email);
-	if (messages[index].password !== password) {
+	// Check if message exists and email matches password
+	const stmt = db.prepare(`
+		SELECT * FROM users
+		WHERE email = ?;
+	`);
+	const message = stmt.get(email);
+	if (message === undefined) {
+		console.log(`User ${email} tried to delete message that doesn't exist`);
+		throw new Error(`User with email ${email} does not exist`);
+	}
+	if (message.password !== password) {
 		console.log(`User ${email} tried to delete message with wrong password: ${password}`);
 		throw new Error(`Password and email do not match. Please try again.`);
 	}
-	console.log(`Deleting message from ${email}...`);
-	messages.splice(index, 1);
+
+	// Delete message
+	const stmt2 = db.prepare(`
+		DELETE FROM users
+		WHERE email = ?;
+	`);
+	const info = stmt2.run(email);
+	return info.changes;
 }
 
 export function getMessages() {
-	console.log('Getting all messages...');
-	if (!db.get('messages')) {
-		console.log('No messages found, creating empty array...');
-		db.set('messages', []);
-	}
-	return db.get('messages');
+	const stmt = db.prepare(`
+		SELECT * FROM users;
+	`);
+	return stmt.all();
 }

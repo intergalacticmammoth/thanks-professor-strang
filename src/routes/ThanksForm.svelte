@@ -3,7 +3,7 @@
 
 	export let name;
 	export let email;
-	export let oneLiner;
+	export let bio;
 	export let message;
 	export let password;
 </script>
@@ -29,22 +29,22 @@
 		>Your email and password are solely for you to be able to delete your message. They are not
 		shown anywhere.</small
 	>
-	<label for="one-liner">One-liner of who you are (optional)</label>
+	<label for="bio">Who are you? (optional)</label>
 	<input
-		bind:value={oneLiner}
+		bind:value={bio}
 		type="text"
-		name="one-liner"
-		id="one-liner"
+		name="bio"
+		id="bio"
 		placeholder="Undergraduate mechanical engineering student @ UPenn"
 		maxlength="100"
 	/>
-	<label for="say-more">Want to say more? (optional)</label>
+	<label for="message">Want to say more? (optional)</label>
 	<input
 		bind:value={message}
 		type="text"
-		name="say-more"
-		id="say-more"
-		placeholder="Elaborated personal message to Prof. Strang ..."
+		name="message"
+		id="message"
+		placeholder="Elaborate personal message to Prof. Strang ..."
 		maxlength="300"
 	/>
 	<input type="submit" value="Submit" />

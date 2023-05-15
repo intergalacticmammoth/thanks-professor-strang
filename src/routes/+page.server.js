@@ -1,5 +1,4 @@
 import { fail } from '@sveltejs/kit';
-import { messages } from './data.js';
 import * as db from '$lib/server/database.js';
 
 export function load({ cookies }) {
@@ -13,7 +12,7 @@ export function load({ cookies }) {
 		messages: db.getMessages().map((message) => ({
 			name: message.name,
 			email: message.email,
-			oneLiner: message.oneLiner,
+			bio: message.bio,
 			message: message.message
 		}))
 	};
@@ -28,8 +27,8 @@ export const actions = {
 				data.get('name'),
 				data.get('email'),
 				data.get('password'),
-				data.get('one-liner'),
-				data.get('say-more')
+				data.get('bio'),
+				data.get('message')
 			);
 			return {
 				success: true,

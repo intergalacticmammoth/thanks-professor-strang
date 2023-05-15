@@ -6,54 +6,41 @@
 
 	export let data;
 	export let form;
-	export let numPeople = data.messages.length;
-	console.log(data);
+	export let numPeople;
+	$: numPeople = data.messages.length;
 </script>
 
-<svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-</svelte:head>
+<h1 id="main-text">
+	Thank you Professor Strang, you have made <br />{numPeople}<br />
+	{numPeople === 1 ? 'person' : 'persons'} love linear algebra.
+</h1>
 
-<div class="container">
-	<h1 id="main-text">
-		Thank you Professor Strang, you have made <br />{numPeople}<br />
-		{numPeople === 1 ? 'person' : 'persons'} love linear algebra.
-	</h1>
-
+<div class="grid">
 	<ToggleFormButton button_text="Say thanks" form_id={'thanks-form'} />
 	<ToggleFormButton button_text="Delete message" form_id={'delete-form'} />
+</div>
 
-	{#if form?.error}
-		<p class="error">{form.error}</p>
+{#if form?.error}
+	<p class="error">{form.error}</p>
+{/if}
+{#if form?.success}
+	{#if form?.uid}
+		<p class="success">Your message is now part of this website!</p>
 	{/if}
-	{#if form?.success}
-		{#if form?.uid}
-			<p class="success">Your message is now part of this website!</p>
-		{/if}
-		{#if form?.message}
-			<p class="success">{form.message}</p>
-		{/if}
+	{#if form?.message}
+		<p class="success">{form.message}</p>
 	{/if}
-	<ThanksForm />
-	<DeleteForm />
+{/if}
+<ThanksForm />
+<DeleteForm />
 
-	<div id="message-container">
-		{#each data.messages as { name, email, oneLiner, message }}
-			<UserCard
-				{name}
-				{email}
-				oneLiner={oneLiner != null ? oneLiner : ''}
-				message={message ? message : ''}
-			/>
-		{/each}
-	</div>
+<div id="message-container">
+	{#each data.messages as { name, email, bio, message }}
+		<UserCard {name} {email} bio={bio != null ? bio : ''} message={message ? message : ''} />
+	{/each}
 </div>
 
 <style>
-	/* This overrides picoss container...! */
-	.container {
-		text-align: center;
-	}
 	.error {
 		color: red;
 	}
@@ -61,12 +48,11 @@
 		color: green;
 	}
 	#main-text {
-		font-size: 3rem;
+		font-size: 2.75rem;
 		font-weight: 700;
 		margin: 1rem auto;
 	}
 	#message-container {
-		margin: 1rem auto;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1rem;
