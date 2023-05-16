@@ -15,7 +15,8 @@ const db = new Database(DB_PATH, { verbose: console.log });
 			email TEXT NOT NULL,
 			password TEXT NOT NULL,
 			bio TEXT NOT NULL,
-			message TEXT NOT NULL
+			message TEXT NOT NULL,
+			date TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 		);
 	`);
 })();
@@ -72,7 +73,7 @@ export function deleteMessage(email, password) {
 
 export function getMessages() {
 	const stmt = db.prepare(`
-		SELECT * FROM users;
+		SELECT * FROM users ORDER BY date DESC;
 	`);
 	return stmt.all();
 }

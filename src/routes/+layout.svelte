@@ -1,6 +1,6 @@
 <script>
     import profStrangImg from '$lib/assets/prof_strang.jpg';
-    import icon from '$lib/assets/icon.png';
+    import icon from '$lib/assets/icon.svg';
 </script>
 <svelte:head>
     <title>Thanks Professor Strang</title>
@@ -23,13 +23,12 @@
     <link rel="icon" href="{icon}" />
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-	<script src="https://kit.fontawesome.com/575b14c39d.js" crossorigin="anonymous"></script>
 </svelte:head>
 
 <header>
     <nav>
-        <a href="/">home</a>
-        <a href="/about">about</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
     </nav>
 </header>
 
@@ -50,7 +49,7 @@
         justify-content: right;
         gap: 1rem;
         margin: 1rem auto;
-        margin-right: 1rem;
+        margin-right: 2rem;
     }
     footer {
         margin: 2rem auto;

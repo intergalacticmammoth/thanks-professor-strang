@@ -9,12 +9,18 @@ export function load({ cookies }) {
 	}
 
 	return {
-		messages: db.getMessages().map((message) => ({
-			name: message.name,
-			email: message.email,
-			bio: message.bio,
-			message: message.message
-		}))
+		messages: db.getMessages().map((message) => {
+			const parsedDate = new Date(message.date);
+			const options = { day: 'numeric', month: 'long', year: 'numeric' };
+			const formattedDate = parsedDate.toLocaleDateString('en-DE', options);
+			return {
+				name: message.name,
+				email: message.email,
+				bio: message.bio,
+				message: message.message,
+				date: formattedDate
+			};
+		})
 	};
 }
 
