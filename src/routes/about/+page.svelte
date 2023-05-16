@@ -8,10 +8,10 @@
 	<p>
 		<a href="https://en.wikipedia.org/wiki/Gilbert_Strang" target="_blank" rel="noopener noreferrer"
 			>Gilbert Strang</a
-		> delivered his last lecture on 15 May 2023, after a 61 year-long teaching service.
+		> delivered his last lecture on 15 May 2023, after an incredible 61-year-long teaching service.
 	</p>
 	<p>
-		As an esteemed mathematics professor at MIT, he gained renown for his impassioned, effective,
+		As a mathematics professor at MIT, he gained renown for his impassioned, effective,
 		and approachable teaching style. Through his expertise and dedication, he has inspired countless
 		students to embrace the beauty of mathematics. His courses are available for everyone to watch
 		through MIT OpenCourseWare, and YouTube. You can find them on his <a

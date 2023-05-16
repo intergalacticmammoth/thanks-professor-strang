@@ -41,12 +41,8 @@
 	form {
 		text-align: left;
 		flex-direction: column;
-		/* margin: 0 auto; */
-		/* max-width: 600px; */
 	}
-
-	/* Form Children */
-	/* form > * {
-        margin: 0.25rem 0;
-    } */
+    small {
+        margin-top: 0.5rem;
+    }
 </style>

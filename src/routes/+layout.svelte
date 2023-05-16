@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 </svelte:head>
 
-<header>
+<header id="top">
     <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -37,7 +37,7 @@
 </div>
 
 <footer class="container">
-    <div>made with ♥ by <a href="https://aristot.io" target="_blank">aristot</a> | code is on <a href="https://github.com/intergalactic-mammoth/thanks-professor-strang" target="_blank">github</a></div>
+    <div>made with ♥ by <a href="https://aristot.io" target="_blank">aristot</a> &#8226; code is on <a href="https://github.com/intergalactic-mammoth/thanks-professor-strang" target="_blank">github</a></div>
 </footer>
 
 <style>

@@ -94,6 +94,9 @@
 		flex-direction: row;
 		align-items: center;
 	}
+	small {
+        margin-top: 0.5rem;
+    }
 	form span {
 		margin-left: auto;
 	}
@@ -102,9 +105,4 @@
 		font-size: 0.75rem;
 		color: #888;
 	}
-
-	/* Form Children */
-	/* form > * {
-        margin: 0.25rem 0;
-    } */
 </style>
