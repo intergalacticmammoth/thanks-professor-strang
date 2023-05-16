@@ -7,8 +7,12 @@
 
 <article>
 	<h3 class="user-name">{name}</h3>
+	{#if bio}
 	<p class="user-bio">{bio}</p>
-	<p><em class="user-message">{message}</em></p>
+	{/if}
+	{#if message}
+	<p class="user-message">{message}</p>
+	{/if}
 	<small>{date}</small>
 </article>
 
@@ -29,8 +33,7 @@
 	.user-name {
 		margin-bottom: 0.25rem;
 	}
-	.user-bio {
-	}
 	.user-message {
+		font-style: italic;
 	}
 </style>
