@@ -42,7 +42,7 @@
 </div>
 
 <footer class="container">
-    <div>made with ♥ by <a href="https://aristot.io" target="_blank">aristot</a> &#8226; code is on <a href="https://github.com/intergalactic-mammoth/thanks-professor-strang" target="_blank">github</a></div>
+    <small>made with ♥ by <a href="https://aristot.io" target="_blank">aristot</a> &#8226; code is on <a href="https://github.com/intergalactic-mammoth/thanks-professor-strang" target="_blank">github</a></small>
 </footer>
 
 <style>
@@ -57,6 +57,10 @@
         margin-right: 2rem;
     }
     footer {
-        margin: 2rem auto;
+        margin: 1rem auto;
+        position: sticky;
+        padding: 1rem 0;
+        bottom: 0;
+        background-color: var(--background-color);
     }
 </style>

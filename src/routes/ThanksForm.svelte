@@ -75,7 +75,7 @@
 			<input on:click={() => dialog.close()} type="submit" value="Submit" />
 			<small
 				>Your email and password are solely for you to be able to delete your message. They are not
-				shown anywhere.</small
+				used for any other purpose.</small
 			>
 		</form>
 		<a href="/" on:click={() => dialog.close()}><small>close</small></a>

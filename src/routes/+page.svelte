@@ -110,7 +110,6 @@
 	}
 	#num-people {
 		font-size: 3.5rem;
-		font-weight: 1000;
 	}
 	#message-container {
 		display: flex;
@@ -130,8 +129,9 @@
 		flex-direction: column;
 		text-align: right;
 		position: fixed;
-		bottom: 2rem;
+		bottom: 3rem;
 		right: 1.25rem;
+		z-index: 10;
 	}
 	small {
 		font-size: 0.8rem;
