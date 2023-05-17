@@ -130,7 +130,7 @@
 		flex-direction: column;
 		text-align: right;
 		position: fixed;
-		bottom: 1rem;
+		bottom: 2rem;
 		right: 1.25rem;
 	}
 	small {
