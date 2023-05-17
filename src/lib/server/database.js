@@ -2,11 +2,11 @@ import Database from 'better-sqlite3';
 import { DB_PATH } from '$env/static/private';
 import { UserMessage } from '$lib/types';
 
-const db = new Database(DB_PATH, { verbose: console.log });
+const db = new Database(DB_PATH, { verbose: console.info });
 
 // Self-executed function to initialize the database
 (() => {
-	console.log('Initializing database...');
+	console.info('Initializing database...');
 	// Create users table if it doesn't exist
 	// Note: ROWID is built-in for every table in sqlite
 	db.exec(`
@@ -54,11 +54,11 @@ export function deleteMessage(email, password) {
 	`);
 	const message = stmt.get(email);
 	if (message === undefined) {
-		console.log(`User ${email} tried to delete message that doesn't exist`);
+		console.info(`User ${email} tried to delete message that doesn't exist`);
 		throw new Error(`User with email ${email} does not exist`);
 	}
 	if (message.password !== password) {
-		console.log(`User ${email} tried to delete message with wrong password: ${password}`);
+		console.info(`User ${email} tried to delete message with wrong password: ${password}`);
 		throw new Error(`Password and email do not match. Please try again.`);
 	}
 

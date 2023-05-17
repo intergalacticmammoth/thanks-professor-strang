@@ -2,23 +2,26 @@
     import { dev } from '$app/environment';
     import profStrangImg from '$lib/assets/prof_strang.jpg';
     import icon from '$lib/assets/icon.svg';
+
+    const description = `A thank you to Professor Strang, who made a lot of people love linear algebra.`;
+    const url = `https://thankyouprofessor.com`;
 </script>
 <svelte:head>
     <title>Thanks Professor Strang</title>
     <!-- Add some SEO tags  -->
-    <meta name="description" content="Thank you Professor Strang, you have made 1 person love linear algebra." />
+    <meta name="description" content={description} />
     <meta property="og:title" content="Thanks Professor Strang" />
-    <meta property="og:description" content="Thank you Professor Strang, you have made 1 person love linear algebra." />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="{profStrangImg}" />
-    <meta property="og:url" content="https://thanksprofessorstrang.com" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content={url} />
+    <meta name="twitter:card" content={profStrangImg} />
     <meta name="twitter:site" content="@aristot_3rd" />
     <meta name="twitter:creator" content="@aristot_3rd" />
     <meta name="twitter:title" content="Thanks Professor Strang" />
-    <meta name="twitter:description" content="Thank you Professor Strang, you have made 1 person love linear algebra." />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="{profStrangImg}" />
     <meta name="twitter:image:alt" content="Thanks Professor Strang" />
-    <meta name="twitter:domain" content="thanksprofessorstrang.com" />
+    <meta name="twitter:domain" content={url} />
 
     <link rel="icon" href="{icon}" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />

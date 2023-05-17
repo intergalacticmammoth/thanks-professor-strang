@@ -30,7 +30,7 @@
 <svelte:window bind:scrollY={y} />
 
 <h1 id="main-text">
-	Thank you Professor Strang, you have made <br /><span id="num-people">{numPeople}</span><br />
+	Thank you Professor Strang, you made <br /><span id="num-people">{numPeople}</span><br />
 	{numPeople === 1 ? 'person' : 'people'} love linear algebra.
 </h1>
 <h2>

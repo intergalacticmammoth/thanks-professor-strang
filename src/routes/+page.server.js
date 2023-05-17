@@ -41,6 +41,7 @@ export const actions = {
 				uid: uid
 			};
 		} catch (error) {
+			console.error(error);
 			return fail(400, {
 				error: error.message
 			});
@@ -55,6 +56,7 @@ export const actions = {
 				message: 'Message successfully deleted'
 			};
 		} catch (error) {
+			console.error(error);
 			return fail(400, {
 				error: error.message
 			});
