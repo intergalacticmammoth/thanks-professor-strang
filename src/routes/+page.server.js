@@ -42,8 +42,12 @@ export const actions = {
 			};
 		} catch (error) {
 			console.error(error);
+			let message = error.message;
+			if (error.message.includes('UNIQUE constraint failed')) {
+				message = 'This email was already used for submitting a message.';
+			}
 			return fail(400, {
-				error: error.message
+				error: message
 			});
 		}
 	},
