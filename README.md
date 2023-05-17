@@ -41,7 +41,7 @@ See the [open issues](https://github.com/intergalactic-mammoth/thanks-professor-
 
 ## Contributing
 
-Contributions are what make the open source community an amazing place to learn. Any contributions you make are greatly appreciated.
+Any contributions you make are greatly appreciated.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the label "enhancement". Don't forget to give the project a star! Thanks again!
 
