@@ -1,4 +1,5 @@
 <script>
+    import { dev } from '$app/environment';
     import profStrangImg from '$lib/assets/prof_strang.jpg';
     import icon from '$lib/assets/icon.svg';
 </script>
@@ -19,10 +20,11 @@
     <meta name="twitter:image:alt" content="Thanks Professor Strang" />
     <meta name="twitter:domain" content="thanksprofessorstrang.com" />
 
-    <!-- Add icon -->
     <link rel="icon" href="{icon}" />
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    {#if !dev}
+    <script async defer data-website-id="a2a6ce2f-d959-4b84-93a2-3e3762a7b4ec" src="https://umami.aristot.io/umami.js"></script>
+    {/if}
 </svelte:head>
 
 <header id="top">
