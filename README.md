@@ -2,9 +2,13 @@
 
 ## About
 
-Professor Strang delivered his last lecture on 15 May after a 61 year-long teaching service. I still remember the excitement and fascination I felt when I discovered his MIT lectures on linear algebra.
+Professor Strang ([Wikipedia](https://en.wikipedia.org/wiki/Gilbert_Strang), [website](https://math.mit.edu/~gs/)) delivered his [last lecture](https://www.youtube.com/live/lUUte2o2Sn8) on 15 May 2023 after a 61 year-long teaching service. I still remember the excitement and fascination I felt when I discovered his [MIT lectures on linear algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/).
 
-I made a website where anyone can say thank you to Professor Strang for his teaching: thankyouprofessor.com.
+I made a website where anyone can say thank you to Professor Strang for his teaching: [thankyouprofessor.com](https://thankyouprofessor.com).
+
+<p align=center>
+<img src="src/lib/assets/prof_strang.jpg" width="350"/>
+</p>
 
 ## Notes for dev
 
@@ -43,16 +47,17 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.md` or https://choosealicense.com/licenses/mit/ for more information.
+Distributed under the MIT License. See `LICENSE.md` or [choosealicense.com](https://choosealicense.com/licenses/mit/) for more information.
 
 ## Contact
 
-Twitter: [@aristot_3rd](https://twitter.com/aristot_3rd)
-Website: https://aristot.io/contact
+- Twitter: [@aristot_3rd](https://twitter.com/aristot_3rd)
+- Website: [aristot.io](https://aristot.io/contact)
 
 ## Acknowledgements
 
-- [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/)
+- [Svelte](https://svelte.dev/)
+- [SvelteKit](https://kit.svelte.dev/)
 - [Node](https://nodejs.org/en)
 - [FontAwesome](https://fontawesome.com/)
 - [Choose an Open Source License](choosealicence.com)
