@@ -129,7 +129,7 @@
 		flex-direction: column;
 		text-align: right;
 		position: fixed;
-		bottom: 3rem;
+		bottom: 3.75rem;
 		right: 1.25rem;
 		z-index: 10;
 	}

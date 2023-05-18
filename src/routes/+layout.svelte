@@ -41,7 +41,7 @@
     <slot />
 </div>
 
-<footer class="container">
+<footer class="container-fluid">
     <small>made with ♥ by <a href="https://aristot.io" target="_blank">aristot</a> &#8226; code is on <a href="https://github.com/intergalactic-mammoth/thanks-professor-strang" target="_blank">github</a></small>
 </footer>
 
@@ -57,10 +57,18 @@
         margin-right: 2rem;
     }
     footer {
-        margin: 1rem auto;
+        text-align: center;
+        margin: 1rem auto auto;
         position: sticky;
-        padding: 1rem 0;
+        padding: 0.5rem 0 1rem 0;
         bottom: 0;
         background-color: var(--background-color);
+    }
+    @supports (backdrop-filter: blur()) {
+        footer {
+            background-color: transparent;
+            border-top: 1px solid var(--background-color);
+            backdrop-filter: blur(10px);
+        }
     }
 </style>
