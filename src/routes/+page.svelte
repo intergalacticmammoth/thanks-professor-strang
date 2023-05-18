@@ -127,6 +127,7 @@
 	.sticky-widget {
 		display: flex;
 		flex-direction: column;
+		gap: 0.5rem;
 		text-align: right;
 		position: fixed;
 		bottom: 3.75rem;

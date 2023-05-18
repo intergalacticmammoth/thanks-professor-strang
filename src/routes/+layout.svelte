@@ -64,11 +64,4 @@
         bottom: 0;
         background-color: var(--background-color);
     }
-    @supports (backdrop-filter: blur()) {
-        footer {
-            background-color: transparent;
-            border-top: 1px solid var(--background-color);
-            backdrop-filter: blur(10px);
-        }
-    }
 </style>
