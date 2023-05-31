@@ -85,8 +85,8 @@
 {/if}
 
 <div id="message-container">
-	{#each data.messages as { name, email, bio, message, date }}
-		<UserCard {name} {email} bio={bio != null ? bio : ''} message={message ? message : ''} {date} />
+	{#each data.messages as { name, bio, message, date }}
+		<UserCard {name} bio={bio != null ? bio : ''} message={message ? message : ''} {date} />
 	{/each}
 </div>
 

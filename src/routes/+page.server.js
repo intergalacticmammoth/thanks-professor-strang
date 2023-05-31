@@ -15,7 +15,6 @@ export function load({ cookies }) {
 			const formattedDate = parsedDate.toLocaleDateString('en-DE', options);
 			return {
 				name: message.name,
-				email: message.email,
 				bio: message.bio,
 				message: message.message,
 				date: formattedDate
